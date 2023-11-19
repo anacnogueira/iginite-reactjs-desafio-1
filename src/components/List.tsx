@@ -1,4 +1,5 @@
 import styles from "./List.module.css";
+import { Task } from "./Task";
 
 export function List() {
   return (
@@ -13,6 +14,9 @@ export function List() {
           <span>1 de 5</span>
         </div>
       </header>
+      <div className={styles.tasks}>
+        <Task />
+      </div>
     </div>
   );
 }
