@@ -1,0 +1,45 @@
+.newTask {
+  margin-top: calc(0px - 1.5rem - 25px);
+}
+
+.newTask form {
+  width: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.newTask form input[type="text"] {
+  width: 39.875rem;
+  height: 3.375rem;
+  background-color: var(--gray-500);
+  padding: 1rem;
+  color: var(--gray-300);
+  border-radius: 8px;
+  border: 0;
+  margin-right: 0.5rem;
+}
+
+.newTask form button[type="submit"] {
+  padding: 1rem 1.2rem;
+  margin: 0;
+  border: 0;
+  overflow: hidden;
+  background-color: var(--blue-dark);
+  border-radius: 8px;
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s background-color;
+}
+
+.newTask form button[type="submit"]:hover {
+  background-color: var(--blue);
+}
+
+.newTask form button[type="submit"] svg {
+  margin-left: 0.3125rem;
+}
