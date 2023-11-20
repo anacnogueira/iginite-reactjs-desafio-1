@@ -1,3 +1,4 @@
+import { EmptyList } from "./EmptyList";
 import styles from "./List.module.css";
 import { Task } from "./Task";
 
@@ -15,7 +16,8 @@ export function List() {
         </div>
       </header>
       <div className={styles.tasks}>
-        <Task />
+        <EmptyList />
+        {/* <Task /> */}
       </div>
     </div>
   );
