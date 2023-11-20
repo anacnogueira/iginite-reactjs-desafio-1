@@ -22,10 +22,22 @@
   transition: 0.1s;
 }
 
-.contentCheck {
+.buttonCheck:hover {
+  color: var(--purple);
+}
+
+.checked {
+  color: var(--purple-dark);
+}
+
+.content {
   width: 40rem;
   font-size: 0.875rem;
   color: var(--gray-300);
+}
+
+.contentTaskFinished {
+  text-decoration: line-through;
 }
 
 .buttonTrash {
@@ -33,6 +45,13 @@
   color: var(--gray-300);
   border: none;
   cursor: pointer;
-  padding: 0.1875rem;
+  padding: 0.3125rem;
   font-size: 1.25rem;
+  border-radius: 4px;
+  line-height: 0;
+}
+
+.buttonTrash:hover {
+  background-color: var(--gray-400);
+  color: var(--danger);
 }
