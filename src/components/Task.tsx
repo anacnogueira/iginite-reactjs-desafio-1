@@ -13,9 +13,13 @@ interface TaskProps {
   onDeleteTask: (taskId: string) => void;
 }
 
-export function Task({ task, onCompleteTask }: TaskProps) {
+export function Task({ task, onCompleteTask, onDeleteTask }: TaskProps) {
   function handleCompleteTask() {
     onCompleteTask(task.id);
+  }
+
+  function handleDeleteTask() {
+    onDeleteTask(task.id);
   }
   return (
     <div className={styles.task}>
@@ -33,7 +37,7 @@ export function Task({ task, onCompleteTask }: TaskProps) {
       >
         {task.title}
       </p>
-      <button className={styles.buttonTrash}>
+      <button className={styles.buttonTrash} onClick={handleDeleteTask}>
         <Trash />
       </button>
     </div>

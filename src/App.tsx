@@ -32,6 +32,13 @@ export function App() {
     setTasks(TasksWithoutCompletedOne);
   }
 
+  function deleteTask(taskId: string) {
+    const TasksWithoutDeletedOne = tasks.filter((task) => {
+      return task.id !== taskId;
+    });
+    setTasks(TasksWithoutDeletedOne);
+  }
+
   return (
     <>
       <Header />
@@ -42,6 +49,7 @@ export function App() {
             tasks={tasks}
             infoTasks={infoTasks}
             onCompleteTask={completeTask}
+            onDeleteTask={deleteTask}
           />
         </main>
       </div>

@@ -1,8 +1,25 @@
-import { Task } from "./Task";
+import { Task, TaskType } from "./Task";
 import { EmptyList } from "./EmptyList";
 import styles from "./List.module.css";
 
-export function List({ tasks, infoTasks, onCompleteTask }) {
+interface InfoTasksType {
+  createdTasks: number;
+  completedTasks: number;
+}
+
+interface ListProps {
+  tasks: TaskType[];
+  infoTasks: InfoTasksType;
+  onCompleteTask: (taskId: string) => void;
+  onDeleteTask: (taskId: string) => void;
+}
+
+export function List({
+  tasks,
+  infoTasks,
+  onCompleteTask,
+  onDeleteTask,
+}: ListProps) {
   return (
     <div className={styles.list}>
       <header>
@@ -20,7 +37,12 @@ export function List({ tasks, infoTasks, onCompleteTask }) {
       <div className={styles.tasks}>
         {tasks.map((task) => {
           return (
-            <Task key={task.id} task={task} onCompleteTask={onCompleteTask} />
+            <Task
+              key={task.id}
+              task={task}
+              onCompleteTask={onCompleteTask}
+              onDeleteTask={onDeleteTask}
+            />
           );
         })}
 
