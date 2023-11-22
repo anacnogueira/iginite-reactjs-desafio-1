@@ -13,12 +13,16 @@ interface TaskProps {
   onDeleteTask: (taskId: string) => void;
 }
 
-export function Task({ task, onCompleteTask, onDeleteTask }: TaskProps) {
+export function Task({ task, onCompleteTask }: TaskProps) {
+  function handleCompleteTask() {
+    onCompleteTask(task.id);
+  }
   return (
     <div className={styles.task}>
       <button
         type="button"
         className={task.isComplete ? styles.buttonChecked : styles.buttonCheck}
+        onClick={handleCompleteTask}
       >
         {task.isComplete ? <CheckCircle weight="fill" /> : <Circle />}
       </button>
