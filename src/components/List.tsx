@@ -1,6 +1,37 @@
 import { EmptyList } from "./EmptyList";
+import { v4 as uuidv4 } from "uuid";
 import styles from "./List.module.css";
 import { Task } from "./Task";
+
+const tasks = [
+  {
+    id: uuidv4(),
+    title: "Comprar leite",
+    isComplete: false,
+  },
+  {
+    id: uuidv4(),
+    title: "Estudar inglês",
+    isComplete: false,
+  },
+  {
+    id: uuidv4(),
+    title: "Fazer roteiro do vídeo",
+    isComplete: false,
+  },
+  {
+    id: uuidv4(),
+    title: "Estudar typescript",
+    isComplete: true,
+  },
+  {
+    id: uuidv4(),
+    title: "Terminar Desafio de React do Ignite",
+    isComplete: true,
+  },
+];
+
+//setTasks
 
 export function List() {
   return (
@@ -16,8 +47,11 @@ export function List() {
         </div>
       </header>
       <div className={styles.tasks}>
-        <EmptyList />
-        {/* <Task /> */}
+        {tasks.map((task) => {
+          return <Task key={task.id} task={task} />;
+        })}
+
+        {tasks.length === 0 && <EmptyList />}
       </div>
     </div>
   );

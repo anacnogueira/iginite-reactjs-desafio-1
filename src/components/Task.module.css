@@ -22,21 +22,30 @@
   transition: 0.1s;
 }
 
+.buttonChecked {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--purple-dark);
+  margin-right: 0.32rem;
+  font-size: 1.5rem;
+  transition: 0.1s;
+}
+
 .buttonCheck:hover {
   color: var(--purple);
 }
 
-.checked {
-  color: var(--purple-dark);
-}
-
-.content {
+.titleNotFinished {
   width: 40rem;
   font-size: 0.875rem;
   color: var(--gray-300);
 }
 
-.contentTaskFinished {
+.titleFinished {
+  width: 40rem;
+  font-size: 0.875rem;
+  color: var(--gray-300);
   text-decoration: line-through;
 }
 
